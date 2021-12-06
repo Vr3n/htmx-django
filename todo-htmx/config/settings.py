@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "allauth.account",
     "accounts",
     "allauth.socialaccount",
+    'crispy_forms',
+    "todo",
 ]
 
 MIDDLEWARE = [
@@ -135,6 +137,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # all auth settings
 
 SITE_ID = 1  # all-auth supports multiple sites
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 AUTHENTICATION_BACKENDS = [
