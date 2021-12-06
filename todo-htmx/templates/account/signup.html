@@ -4,7 +4,7 @@
 {% block content %}
 <div class="content mt-20 text-center">
   <h2>Sign up to start your list</h2>
-  <form hx-post="{% url 'account_signup' %}" hx-target="#authentication">
+  <form hx-post="{% url 'account_signup' %}" hx-target="outerHTML">
     <!-- no longer needed {% csrf_token %} -->
     {{ form }}
     <button type="submit" class="btn mt-5">Sign Up</button>
