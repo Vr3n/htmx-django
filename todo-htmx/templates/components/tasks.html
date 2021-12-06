@@ -1,10 +1,20 @@
-<div class="card w-600 mw-full mx-auto">
+<div class="card w-600 mw-full mx-auto" id="tasks">
+  <!-- new id -->
   <h3 class="card-title">Your tasks</h3>
   <ul>
+    <!-- new HTMX -->
+    <form hx-post="{% url 'home' %}" hx-swap="outerHTML" hx-target="#tasks">
+      {{ form }}
+      <button type="submit">Add</button>
+    </form>
+    {% if errors %} {{errors}} {% endif %}
+    <!-- new -->
     {% for task in tasks %}
     <li>{{task}}</li>
     {% empty %}
     <li>No items on your list yet</li>
     {% endfor %}
+
+    <!-- no hx-trigger on a form means it will be on submit -->
   </ul>
 </div>
